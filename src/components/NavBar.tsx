@@ -1,0 +1,53 @@
+"use client";
+
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { UsersPage } from "./UsersPage";
+
+export function Navbar() {
+  const [logged, setLogged] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setLogged(localStorage.getItem("login") === "1");
+    }
+  }, []);
+
+  return (
+    <nav className="w-full bg-gradient-to-r from-[#223159] via-[#312965] to-[#20697a] py-4 shadow-lg">
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
+        <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-400 via-purple-400 to-yellow-300 bg-clip-text text-transparent drop-shadow tracking-tight">
+          Katalog Game
+        </h1>
+
+        <div className="flex gap-4 items-center">
+          {logged ? (
+            <Link
+              href="/profile"
+              className="px-5 py-2 bg-white/90 text-blue-700 rounded-xl font-semibold shadow hover:bg-blue-100 transition"
+            >
+              Profile
+            </Link>
+          ) : (
+            <>
+              <Link
+                href="/login"
+                className="px-5 py-2 bg-white/90 text-green-700 rounded-xl font-semibold shadow hover:bg-green-100 transition"
+              >
+                Login
+              </Link>
+              <Link
+                href="/register"
+                className="px-5 py-2 bg-white/90 text-green-700 rounded-xl font-semibold shadow hover:bg-green-100 transition"
+              >
+                Sign Up
+              </Link>
+              <Link
+               href="userPage">hapus</Link>
+            </>
+          )}
+        </div>
+      </div>
+    </nav>
+  );
+}
