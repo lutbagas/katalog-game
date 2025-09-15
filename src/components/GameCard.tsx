@@ -1,24 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-
-interface Rating {
-  id: number;
-  title: string;
-  percent: number;
-}
-
-interface Genre {
-  name: string;
-}
-
-interface Game {
-  id: number;
-  name? : string;
-  released: string;
-  background_image: string;
-  ratings: Rating[];
-  genres: Genre[];
-}
+import { Game } from "@/types/game.types";
 
 export function GameCard(
   {game} : {game: Game}
