@@ -15,7 +15,7 @@ export function GameCard(
       <p>{game.released ?? "Masih belum tersedia"}</p>
       <p>{game.genres[0]?.name}</p>
       <p></p>
-    <Link href={`/game/${game.id}`} className="bg-cyan-600 p-2 rounded-xl w-full cursor-pointer">Detail</Link>
+    <Link href={`/game/${game.id}`} className="bg-blue-300 p-2 rounded-xl w-full cursor-pointer hover:bg-sky-400 transition">Detail</Link>
     </div>
   </div>  
   )

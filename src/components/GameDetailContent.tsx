@@ -55,7 +55,7 @@ export function GameDetailContent({ game }: { game: Game }) {
           href={game.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 px-3 py-2 bg-[#6ec1e4] text-white rounded-lg font-semibold shadow hover:bg-[#7f7fd5] transition"
+          className="mt-1 px-3 py-2 bg-[#6ec1e4] text-white rounded-lg font-semibold shadow hover:bg-sky-400 transition"
         >
           Visit Official Website
         </a>
