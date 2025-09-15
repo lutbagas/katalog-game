@@ -5,7 +5,6 @@ import { Game } from "@/types/game.types";
 export function GameCard(
   {game} : {game: Game}
 ) {
-
   return(
   <div className="bg-sky-700 p-4 space-y-3">
     <div>

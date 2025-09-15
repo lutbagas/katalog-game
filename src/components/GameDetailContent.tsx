@@ -1,16 +1,6 @@
 "use client";
 import { BackButton } from "@/components/BackButton";
 
-interface platform {
-  name: string;
-}
-
-type Game = {
-  background_image: string;
-  name: string
-}
-
-
 
 export function GameDetailContent({ game }: { game: any }) {
   return (
