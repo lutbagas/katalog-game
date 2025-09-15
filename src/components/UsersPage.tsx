@@ -57,7 +57,7 @@ export function UsersPage() {
         {users.map(user => (
           <li key={user.id}>
             {user.email}
-            <button onClick={() => handleDeleteUser(user.id)} className="w-full bg-red-500 cursor-pointer">Hapus</button>
+            <button onClick={() => handleDeleteUser(user.id)} className="w-full bg-red-500 cursor-pointer hover:bg-red-700">Hapus</button>
           </li>
         ))}
       </ul>
