@@ -6,7 +6,7 @@ export function GameCard(
   {game} : {game: Game}
 ) {
   return(
-  <div className="bg-sky-700 p-4 space-y-3">
+  <div className="bg-gradient-to-br from-sky-400 via-blue-500 to-sky-600 p-4 space-y-3">
     <div>
       <Image src={game.background_image} alt="" width={500} height={500}></Image>
     </div>
@@ -15,7 +15,7 @@ export function GameCard(
       <p>{game.released ?? "Masih belum tersedia"}</p>
       <p>{game.genres[0]?.name}</p>
       <p></p>
-    <Link href={`/game/${game.id}`} className="bg-sky-400 p-2">Detail</Link>
+    <Link href={`/game/${game.id}`} className="bg-cyan-600 p-2 rounded-xl w-full cursor-pointer">Detail</Link>
     </div>
   </div>  
   )

@@ -33,4 +33,5 @@ export interface Game {
   developers: Developer[];
   publishers: Publisher[];
   website: string;
+  updated: string
 }

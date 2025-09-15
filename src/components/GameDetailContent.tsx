@@ -1,6 +1,7 @@
 "use client";
 import { BackButton } from "@/components/BackButton";
-import { Game } from "@/types/game.types";
+import { Game,Developer, Publisher, Genre } from "@/types/game.types";
+
 
 export function GameDetailContent({ game }: { game: Game }) {
   return (
@@ -25,24 +26,28 @@ export function GameDetailContent({ game }: { game: Game }) {
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Developer:</span>{" "}
         {game.developers?.length > 0
-          ? game.developers.map((dev: any) => dev.name).join(", ")
+          ? game.developers.map((dev: Developer) => dev.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Publisher:</span>{" "}
         {game.publishers?.length > 0
-          ? game.publishers.map((pub: any) => pub.name).join(", ")
+          ? game.publishers.map((pub: Publisher) => pub.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Genres:</span>{" "}
         {game.genres?.length > 0
-          ? game.genres.map((genre: any) => genre.name).join(", ")
+          ? game.genres.map((genre: Genre) => genre.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-4">
         <span className="font-semibold">Release Date:</span>{" "}
         {game.released || "-"}
+      </p>
+      <p>
+        <span className="font-semibold">Game Update: </span>
+        {game.updated}
       </p>
 
       {game.website && (
