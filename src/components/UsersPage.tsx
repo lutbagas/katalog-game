@@ -1,8 +1,5 @@
 // components/UsersPage.tsx
-
-
 "use client"
-
 import { useEffect, useState } from "react";
 
 type User = {
@@ -54,13 +51,13 @@ export function UsersPage() {
   };
 
   return (
-    <div>
+    <div className="bg-gray-800 p-10">
       <h1>Daftar User</h1>
-      <ul>
+      <ul className="space-y-6">
         {users.map(user => (
           <li key={user.id}>
             {user.email}
-            <button onClick={() => handleDeleteUser(user.id)}>Hapus</button>
+            <button onClick={() => handleDeleteUser(user.id)} className="w-full bg-red-500 cursor-pointer">Hapus</button>
           </li>
         ))}
       </ul>
