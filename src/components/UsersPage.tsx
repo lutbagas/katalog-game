@@ -51,8 +51,9 @@ export function UsersPage() {
   };
 
   return (
-    <div className="bg-gray-800 p-10">
-      <h1>Daftar User</h1>
+    <div className="bg-gray-800 p-15 rounded-2xl">
+      <h3 className="text-3xl font-bold text-center mb-6">Delete User</h3>
+      <h1 className="text-center mb-3">Daftar User</h1>
       <ul className="space-y-6">
         {users.map(user => (
           <li key={user.id}>
