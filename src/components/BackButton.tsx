@@ -5,7 +5,7 @@ export function BackButton(){
 
   return(
     <button onClick={() => router.push("/")}
-    className="mb-5 px-3 bg-sky-600 p-2 rounded-2xl cursor-pointer">&larr; Kembali</button>
+    className="absolute top-5 left-5 px-3 bg-sky-600 p-2 rounded-2xl cursor-pointer">&larr; Kembali</button>
   )
 
 
