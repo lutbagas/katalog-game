@@ -8,6 +8,18 @@ export interface Genre {
   name: string;
 }
 
+export interface Developer {
+  id: number;
+  name: string;
+  image_background: string;
+}
+
+export interface Publisher {
+  id: number;
+  name: string;
+  image_background: string;
+}
+
 export interface Game {
   id: number;
   name?: string;
@@ -15,4 +27,8 @@ export interface Game {
   background_image: string;
   ratings: Rating[];
   genres: Genre[];
+  website: string;
+  description_raw: string;
+  developers: Developer[];
+  publishers: Publisher[];
 }
