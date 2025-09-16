@@ -32,3 +32,8 @@ export interface Game {
   developers: Developer[];
   publishers: Publisher[];
 }
+
+export type user = {
+  id: string;
+  email: string;
+}

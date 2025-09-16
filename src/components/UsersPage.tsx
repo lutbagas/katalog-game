@@ -3,11 +3,7 @@
 
 import { useEffect, useState } from "react";
 import { BackButton } from "./BackButton";
-
-type User = {
-  id: string;
-  email: string;
-};
+import { User } from "@prisma/client";
 
 export function UsersPage() {
   const [users, setUsers] = useState<User[]>([]);
