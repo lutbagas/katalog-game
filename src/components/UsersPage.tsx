@@ -1,9 +1,8 @@
 // components/UsersPage.tsx
-
-
 "use client"
 
 import { useEffect, useState } from "react";
+import { BackButton } from "./BackButton";
 
 type User = {
   id: string;
@@ -55,6 +54,7 @@ export function UsersPage() {
 
   return (
     <div>
+      <BackButton/>
       <h1>Daftar User</h1>
       <ul>
         {users.map(user => (
