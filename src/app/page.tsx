@@ -33,7 +33,7 @@ export default async function HomePage() {
           <div className="mt-5 flex items-center justify-center gap-3">
             <Link
               href="/catalog"
-              className="rounded-xl bg-blue-500 px-5 py-2 font-semibold hover:bg-blue-600"
+              className="rounded-xl bg-sky-600 px-5 py-2 font-semibold hover:bg-sky-800"
             >
               Buka Katalog
             </Link>
