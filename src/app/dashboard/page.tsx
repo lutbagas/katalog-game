@@ -10,12 +10,12 @@ export default async function DashboardPage() {
   ]);
   const kpi = [
     { label: "Total Game", value: 128 },
-    { label: "Favorit", value: 18 },
+    { label: "Favorit", value: 10 },
     { label: "Baru", value: recent.length },
   ];
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100">
-      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur">
+    <main className="min-h-screen bg-slate-800 text-neutral-100">
+      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-semibold">Dashboard</h1>
           <div className="flex items-center gap-2">
@@ -30,7 +30,7 @@ export default async function DashboardPage() {
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {kpi.map(i => (
             <div key={i.label} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
-              <p className="text-sm text-neutral-400">{i.label}</p>
+              <p className="text-sm text-neutral-300">{i.label}</p>
               <p className="mt-2 text-3xl font-semibold">{i.value}</p>
             </div>
           ))}
