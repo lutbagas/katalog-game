@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Navbar } from "@/components/NavBar";
 import { GameCard } from "@/components/GameCard";
 import { fetchGames } from "@/lib/rawg-api";
+import { Game } from "@/types/game.types";
 
 export default async function HomePage() {
   const games = await fetchGames({ pageSize: 8, ordering: "-rating" });
@@ -25,7 +26,7 @@ export default async function HomePage() {
                 className="w-full bg-transparent outline-none"
                 autoComplete="off"
               />
-              <button className="rounded-xl bg-white/15 px-4 py-2 text-sm hover:bg-white/25">
+              <button className="rounded-xl bg-white/15 px-4 py-2 text-sm hover:bg-white/35 cursor-pointer">
                 Cari
               </button>
             </div>
@@ -33,13 +34,13 @@ export default async function HomePage() {
           <div className="mt-5 flex items-center justify-center gap-3">
             <Link
               href="/catalog"
-              className="rounded-xl bg-sky-600 px-5 py-2 font-semibold hover:bg-sky-800"
+              className="rounded-xl bg-blue-600/60 px-5 py-2 font-semibold hover:bg-blue-500/95"
             >
               Buka Katalog
             </Link>
             <Link
               href="/favorites"
-              className="rounded-xl border border-white/20 bg-white/10 px-5 py-2 hover:bg-white/15"
+              className="rounded-xl border border-white/20 bg-black/10 px-5 py-2 hover:bg-white/30"
             >
               Lihat Favorit
             </Link>
@@ -53,7 +54,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
-            {games.map((g: any) => (
+            {games.map((g: Game) => (
               <GameCard key={g.id} game={g} />
             ))}
           </div>
