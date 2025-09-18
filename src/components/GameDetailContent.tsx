@@ -13,6 +13,7 @@ export function GameDetailContent({ game }: { game: Game }) {
         alt=""
         width={500}
         height={500}
+        quality={80}
         className="w-full h-56 object-cover rounded-xl mb-6 shadow"
       />
       <h1 className="text-3xl font-bold text-indigo-400 mb-2 text-center">
