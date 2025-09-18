@@ -16,7 +16,7 @@ export interface Developer {
 
 export interface Publisher {
   id: number;
-  name: string;
+  name?: string;
   image_background: string;
 }
 
@@ -31,6 +31,7 @@ export interface Game {
   description_raw: string;
   developers: Developer[];
   publishers: Publisher[];
+  updated: string;
 }
 
 export type user = {

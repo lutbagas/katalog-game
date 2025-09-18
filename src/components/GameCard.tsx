@@ -2,21 +2,21 @@ import Link from "next/link";
 import Image from "next/image";
 import { Game } from "@/types/game.types";
 
-export function GameCard(
-  {game} : {game: Game}
-) {
-  return(
-  <div className="bg-sky-700 p-4 space-y-3">
+export function GameCard({game}: {game : Game}) {
+  return (
+  <div className="bg-gradient-to-br from-sky-600 via-sky-700 to-sky-800 p-4 rounded-xl">
     <div>
-      <Image src={game.background_image} alt="" width={500} height={500}></Image>
+      <Image src={game.background_image} alt="game.id" width={500} height={500} loading="lazy"></Image>
     </div>
-    <div className="text-center space-y-1.5">
-      <h3>{game.name}</h3>
-      <p>{game.released ?? "Masih belum tersedia"}</p>
-      <p>{game.genres[0]?.name}</p>
-      <p></p>
-    <Link href={`/game/${game.id}`} className="bg-sky-400 p-2">Detail</Link>
+    <div>
+    <h3 className="text-center">{game.name}</h3>
+    <p className="text-center">{game.released?? "Coming Soon"}</p>
+    <p className="text-center">{game.ratings[0]?.percent}</p>
+    <p className="text-center">{game.updated}</p>
     </div>
-  </div>  
+    <div>
+      <Link href={`/game/${game.id}`}>Detail</Link>
+    </div>
+  </div>
   )
 }
