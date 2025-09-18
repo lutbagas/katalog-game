@@ -14,9 +14,9 @@ export function GameCard({game}: {game : Game}) {
       <Image src={game.background_image} alt="game.id" width={500} height={500} loading="lazy"></Image>
     </div>
     <div className="space-y-1 pb-4.5">
-      <h3 className="text-center">{game.name}</h3>
-      <p className="text-center">{game.released?? "To Be Announced"}</p>
-      <p className="text-center">{game.ratings[0]?.percent}</p>
+      <h3 className="text-center font-semibold">{game.name}</h3>
+      <p className="text-center">Released: {game.released?? "To Be Announced"}</p>
+      <p className="text-center">Ratings: {game.ratings[0]?.percent}</p>
       <p className="text-center">Last Updated: {formatDate(game.updated)}</p>
     </div>
     <div className="text-center">

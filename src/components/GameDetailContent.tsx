@@ -14,6 +14,8 @@ export function GameDetailContent({ game }: { game: Game }) {
         width={500}
         height={500}
         quality={80}
+        placeholder="blur"
+        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB..."
         className="w-full h-56 object-cover rounded-xl mb-6 shadow"
       />
       <h1 className="text-3xl font-bold text-indigo-400 mb-2 text-center">
@@ -21,7 +23,7 @@ export function GameDetailContent({ game }: { game: Game }) {
       </h1>
 
       {/* ✅ perbaikan bagian description */}
-      <p className="text-white mb-4 text-center">
+      <p className="text-white mb-4 text-center text-xs">
         {game.description_raw
           ? game.description_raw.split(" ").slice(0, 50).join(" ") + "..."
             : "No description available."}

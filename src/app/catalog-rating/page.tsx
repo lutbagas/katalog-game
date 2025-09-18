@@ -32,13 +32,13 @@ export default async function CatalogPage({
   return(
     <main className="min-h-screen bg-gradient-to-br from-[#223159] via-[#312965] to-[#20697a] text-neutral-100">
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-6">
-        <header className="felx items-center justify-between gap-3">
+        <header className="flex items-center justify-between gap-3">
           <div>
             <h1 className="text-2xl md:text-3xl font-semibold">
-              {searchQuery ? `Hasil untuk ${searchQuery}`: "Katalog Game (Rating Tertinggi)"}
+              {searchQuery ? `Result for ${searchQuery}`: "Catalog Game (Highest Rating)"}
             </h1>
             <p className="text-sm text-neutral-400 mt-1">
-              {searchQuery ? "Pencarian dari RAWG" : "urut rating tertinggi"}
+              {searchQuery ? "Searching From RAWG" : "Sort by Highest Rating"}
             </p>
           </div>
           <form action="/catalog-rating" className="hidden md:block">
@@ -46,7 +46,7 @@ export default async function CatalogPage({
             <input 
             name="query"
             defaultValue={searchQuery}
-            placeholder="Cari..."
+            placeholder="Search..."
             className="bg-transparent outline-none text-sm" 
           />
           <button className="rounded-lg bg-neutral-800 px-3 py-1.5 text-sm hover:bg-neutral-700">
