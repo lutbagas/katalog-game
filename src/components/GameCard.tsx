@@ -11,7 +11,8 @@ export function GameCard({game}: {game : Game}) {
   return (
   <div className="bg-gradient-to-br from-purple-700/60 via-violet-800/50 to-blue-800/60 p-4 rounded-xl">
     <div className="mb-3">
-      <Image src={game.background_image} alt="" width={500} height={500} loading="lazy"></Image>
+      <Image src={game.background_image || "/placeholder.jpg"} 
+      alt="" width={500} height={500} loading="lazy"className={game.background_image? "rounded-lg object-cover": "rounded-lg bg-gray-800 p-1.5"}></Image>
     </div>
     <div className="space-y-1 pb-4.5">
       <h3 className="text-center font-semibold">{game.name}</h3>

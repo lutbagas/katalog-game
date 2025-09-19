@@ -49,7 +49,7 @@ export default async function HomePage() {
         <section className="mx-auto max-w-7xl px-6 pb-16">
           <div className="mb-4 flex items-center justify-between">
             <h2 className="text-2xl font-semibold">🔥 Game Rekomendasi</h2>
-            <Link href="/catalog-rating" className="text-sm text-white/85 hover:text-white">
+            <Link href="/catalog" className="text-sm text-white/85 hover:text-white">
               Lihat semua
             </Link>
           </div>
