@@ -9,9 +9,9 @@ function formatDate(dateString?: string) {
 
 export function GameCard({game}: {game : Game}) {
   return (
-  <div className="bg-gradient-to-b from-sky-500/70 via-sky-600/70 to-blue-700/80 p-4 rounded-xl">
-    <div>
-      <Image src={game.background_image} alt="game.id" width={500} height={500} loading="lazy"></Image>
+  <div className="bg-gradient-to-br from-purple-700/60 via-violet-800/50 to-blue-800/60 p-4 rounded-xl">
+    <div className="mb-3">
+      <Image src={game.background_image} alt="" width={500} height={500} loading="lazy"></Image>
     </div>
     <div className="space-y-1 pb-4.5">
       <h3 className="text-center font-semibold">{game.name}</h3>

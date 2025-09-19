@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { fetchGames, FetchOpts } from "@/lib/rawg-api";
 import { GameCard } from "@/components/GameCard";
+import { FilterBar } from "@/components/FilterBar";
 
 type CatalogSearchParams = {
   page?: string;
@@ -31,6 +32,7 @@ export default async function CatalogPage({
   };
   return(
     <main className="min-h-screen bg-gradient-to-br from-[#223159] via-[#312965] to-[#20697a] text-neutral-100">
+      <FilterBar/>
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-6">
         <header className="flex items-center justify-between gap-3">
           <div>
