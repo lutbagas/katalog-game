@@ -18,7 +18,8 @@ export function LoginForm(){
         const res = await fetch ("api/auth/login", {
           method: "POST",
           body: JSON.stringify({email, password}),
-          headers: {"Content-Type": "application/json"}
+          headers: {"Content-Type": "application/json"},
+          credentials: "include",
         })
         if (res.ok){
           setTimeout(() => router.push("/dashboard"), 1500)

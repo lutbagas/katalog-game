@@ -2,8 +2,15 @@
 import Link from "next/link";
 import { LogoutButton } from "@/components/LogoutButton";
 import { fetchGames } from "@/lib/rawg-api";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function DashboardPage() {
+  const LoggedIn = (await cookies()).get("loggedIn")?.value;
+
+  if(!LoggedIn){
+    redirect("/login")
+  }
   const [top, recent] = await Promise.all([
     fetchGames({ pageSize: 4, ordering: "-rating" }),
     fetchGames({ pageSize: 4, ordering: "-released" }),
@@ -13,6 +20,8 @@ export default async function DashboardPage() {
     { label: "Favorit", value: 10 },
     { label: "Baru", value: recent.length },
   ];
+
+
   return (
     <main className="min-h-screen bg-slate-800 text-neutral-100">
       <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur">

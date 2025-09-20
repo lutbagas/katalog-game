@@ -11,19 +11,32 @@ export async function POST(req: Request){
     if (!email || !password){
       return NextResponse.json({ error: "input tidak valid"}, {status: 400})
     }
+
     const user = await prisma.user.findUnique({
       where: { email },
       select: {id: true, email:true, passwordHash: true}
     })
+
     if (!user){
       return NextResponse.json({error:"Email atau password salah"}, {status: 400})
     }
-    const ok = await bcrypt.compare(password, user.passwordHash)
 
+    const ok = await bcrypt.compare(password, user.passwordHash)
     if (!ok) {
       return NextResponse.json({error: "Email atau password salah"}, {status: 400}) 
     }
-    return NextResponse.json({success: true, message: "Login Berhasil"})
+
+    // Login berhasil → set cookie
+    const res = NextResponse.json({success: true, message: "Login Berhasil"});
+    res.cookies.set("loggedIn", "true", {
+      httpOnly: true,
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60, // 1 jam
+    });
+
+    return res;
+
   } catch (e){
     console.log(e)
     return NextResponse.json({error: "tidak dapat terhubung dengan server"}, {status: 500})
