@@ -1,12 +1,22 @@
 import { useRouter } from "next/navigation";
+import { useState } from "react"
 
 export function BackButton(){
   const router = useRouter();
+  const [disabled, setDisabled] = useState(false);
+
+  const handleBack = () => {
+    if (disabled) return;
+    setDisabled(true);
+    router.back();
+    setTimeout(() => {setDisabled(false)}, 500);
+  }
 
   return(
-    <button onClick={() => router.back()}
-    className="mb-5 px-3 bg-sky-600 p-2 rounded-2xl cursor-pointer absolute top-4 left-4">&larr; Kembali</button>
+    <button 
+      onClick={handleBack}
+      disabled={disabled}
+      className={` absolute top-3 left-3 rounded-xl cursor-pointer p-1.5 ${disabled? "bg-gray-500" : "hover:bg-sky-300 bg-sky-500"}`}
+    >&larr; Kembali</button>
   )
-
-
 }

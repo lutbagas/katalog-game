@@ -35,7 +35,7 @@ export function LoginForm(){
       }
   } 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-800 p-9 space-y-5 text-indigo-100">
+    <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100">
       <h3 className="text-2xl text-center">Login</h3>
       <input 
         type="email"
@@ -59,7 +59,7 @@ export function LoginForm(){
         {loading ? "Memproses..." : "Masuk"}
         {loading && <PiSpinnerGapBold className="ml-2 animate-spin" />}
       </button>
-        {message.text && <p>{message.text}</p>}
+        {message.text && <p className={message.type === "success"? "text-green-500": "text-red-500"}>{message.text}</p>}
     </form>
   )
 }

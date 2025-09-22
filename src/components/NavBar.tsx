@@ -41,7 +41,7 @@ export function Navbar() {
                 href="/register"
                 className="px-5 py-2 bg-gray-200 text-sky-700 rounded-xl font-semibold shadow hover:bg-sky-200 transition"
               >
-                Sign Up
+                Sign-Up
               </Link>
               <Link
                href="userPage"
