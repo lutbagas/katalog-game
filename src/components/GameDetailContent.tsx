@@ -1,5 +1,4 @@
 "use client";
-import { BackButton } from "@/components/BackButton";
 import { Game } from "@/types/game.types";
 import  Image  from "next/image"
 
@@ -7,7 +6,6 @@ import  Image  from "next/image"
 export function GameDetailContent({ game }: { game: Game }) {
   return (
     <div className="max-w-2xl mx-auto bg-gradient-to-bl from-blue-900 to-cyan-700 via-sky-800 rounded-2xl shadow-lg p-8 mt-8 flex flex-col items-center">
-      <BackButton />
       <Image
         src={game.background_image}
         alt=""

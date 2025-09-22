@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { UsersPage } from "./UsersPage";
 
 export function Navbar() {
   const [logged, setLogged] = useState<boolean>(false);
-
+  const router = useRouter();
   useEffect(() => {
     if (typeof window !== "undefined") {
       setLogged(localStorage.getItem("login") === "1");
@@ -16,7 +17,7 @@ export function Navbar() {
   return (
     <nav className="w-full bg-gradient-to-r from-[#223159] via-[#312965] to-[#20697a] py-4 shadow-lg">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6">
-        <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight">
+        <h1 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight cursor-pointer" onClick={() => router.push("/")}>
           Katalog Game
         </h1>
 
