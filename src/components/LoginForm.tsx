@@ -35,7 +35,7 @@ export function LoginForm(){
       }
   } 
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100">
+    <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100  ">
       <h3 className="text-2xl text-center">Login</h3>
       <input 
         type="email"
@@ -44,7 +44,7 @@ export function LoginForm(){
         autoComplete="new-email"
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="bg-gray-700 w-full p-3 focus:ring-2 outline-none focus:ring-sky-400"
+        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-sky-400"
       />
       <input 
         type="password"
@@ -53,7 +53,7 @@ export function LoginForm(){
         autoComplete="new-password"
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="bg-gray-700 w-full p-3 focus:ring-2 outline-none focus:ring-sky-400"
+        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-sky-00"
       />
       <button className="bg-sky-400 p-2 w-full cursor-pointer hover:bg-sky-600">
         {loading ? "Memproses..." : "Masuk"}
