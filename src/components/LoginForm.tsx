@@ -27,7 +27,7 @@ export function LoginForm(){
         })
         
         if (res.ok){
-          setTimeout(() => router.push("/dashboard"), 4000)
+          setTimeout(() => router.push("/dashboard"), 1500)
           setMessage({text: "Login Berhasil", type: "success"});
         } else {
           setMessage({ text : "Login Gagal", type: "error"});
