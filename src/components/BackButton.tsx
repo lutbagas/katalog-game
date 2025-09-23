@@ -9,7 +9,7 @@ export function BackButton(){
     if (disabled) return;
     setDisabled(true);
     router.back();
-    setTimeout(() => {setDisabled(true)}, 500)
+    setTimeout(() => {setDisabled(false)}, 500)
   }
 
   return(
