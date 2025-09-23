@@ -9,14 +9,14 @@ export function BackButton(){
     if (disabled) return;
     setDisabled(true);
     router.back();
-    setTimeout(() => {setDisabled(false)}, 500);
+    setTimeout(() => {setDisabled(true)}, 500)
   }
 
   return(
     <button 
       onClick={handleBack}
       disabled={disabled}
-      className={` absolute top-3 left-3 rounded-xl cursor-pointer p-1.5 ${disabled? "bg-gray-500" : "hover:bg-sky-300 bg-sky-500"}`}
-    >&larr; Kembali</button>
+      className={`absolute top-3 left-3 rounded-xl cursor-pointer p-1 px-5 ${disabled? "bg-gray-500" : " bg-violet-700 hover:bg-violet-800"}`}
+    >&larr;</button>
   )
 }
