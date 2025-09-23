@@ -9,11 +9,12 @@ export function LoginForm(){
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<{ text: string; type: "success" | "error" | "" }>({ text: "", type: "" });
   const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false)
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true)
+    setLoading(true);
     try {
         const res = await fetch ("api/auth/login", {
           method: "POST",
@@ -21,8 +22,11 @@ export function LoginForm(){
           headers: {"Content-Type": "application/json"},
           credentials: "include",
         })
+        if (disabled) return;
+        setDisabled(true);
+        setTimeout(() => {setDisabled(true)}, 500)
         if (res.ok){
-          setTimeout(() => router.push("/dashboard"), 1500)
+          setTimeout(() => router.push("/dashboard"), 4000)
           setMessage({text: "Login Berhasil", type: "success"});
         } else {
           setMessage({ text : "Login Gagal", type: "error"});
@@ -55,7 +59,8 @@ export function LoginForm(){
         required
         className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-sky-00"
       />
-      <button className="bg-sky-400 p-2 w-full cursor-pointer hover:bg-sky-600">
+      <button className={` p-2 w-full cursor-pointer ${disabled? "bg-gray-400": "bg-sky-400 hover:bg-sky-600"}`}
+      disabled={disabled}>
         {loading ? "Memproses..." : "Masuk"}
         {loading && <PiSpinnerGapBold className="ml-2 animate-spin" />}
       </button>
