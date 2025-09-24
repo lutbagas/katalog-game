@@ -22,12 +22,12 @@ export default async function HomePage() {
             <div className="mx-auto flex max-w-xl items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
               <input
                 name="q"
-                placeholder="Cari game..."
+                placeholder="Search Game..."
                 className="w-full bg-transparent outline-none"
                 autoComplete="off"
               />
               <button className="rounded-xl bg-white/15 px-4 py-2 text-sm hover:bg-white/35 cursor-pointer">
-                Cari
+                Search
               </button>
             </div>
           </form>
@@ -48,9 +48,9 @@ export default async function HomePage() {
         </section>
         <section className="mx-auto max-w-7xl px-6 pb-16">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold">🔥 Game Rekomendasi</h2>
+            <h2 className="text-2xl font-semibold">🔥 Recommended Game</h2>
             <Link href="/catalog" className="text-sm text-white/85 hover:text-white">
-              Lihat semua
+              See All
             </Link>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4">
