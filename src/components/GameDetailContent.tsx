@@ -1,7 +1,9 @@
 "use client";
 import { Game } from "@/types/game.types";
-import  Image  from "next/image"
-
+import  Image  from "next/image";
+import { Developer } from "@/types/game.types";
+import { Publisher } from "@/types/game.types";
+import { Genre } from "@/types/game.types"
 
 export function GameDetailContent({ game }: { game: Game }) {
   return (
@@ -30,19 +32,19 @@ export function GameDetailContent({ game }: { game: Game }) {
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Developer:</span>{" "}
         {game.developers?.length > 0
-          ? game.developers.map((dev: any) => dev.name).join(", ")
+          ? game.developers.map((dev: Developer) => dev.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Publisher:</span>{" "}
         {game.publishers?.length > 0
-          ? game.publishers.map((pub: any) => pub.name).join(", ")
+          ? game.publishers.map((pub: Publisher) => pub.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Genres:</span>{" "}
         {game.genres?.length > 0
-          ? game.genres.map((genre: any) => genre.name).join(", ")
+          ? game.genres.map((genre: Genre) => genre.name).join(", ")
           : "-"}
       </p>
       <p className="text-sm text-white mb-4">
