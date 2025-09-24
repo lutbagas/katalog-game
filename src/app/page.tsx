@@ -16,7 +16,7 @@ export default async function HomePage() {
             Temukan Game Favorit-mu
           </h1>
           <p className="mt-3 text-white/85">
-            Cari berdasarkan nama, genre, atau platform.
+            Search by name, genre, or platform.
           </p>
           <form action="/catalog" className="mt-6">
             <div className="mx-auto flex max-w-xl items-center gap-2 rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
@@ -36,13 +36,13 @@ export default async function HomePage() {
               href="/catalog"
               className="rounded-xl bg-blue-600/60 px-5 py-2 font-semibold hover:bg-blue-500/95"
             >
-              Buka Katalog
+              Open Catalog
             </Link>
             <Link
               href="/favorites"
               className="rounded-xl border border-white/20 bg-black/10 px-5 py-2 hover:bg-white/30"
             >
-              Lihat Favorit
+              See Favorite
             </Link>
           </div>
         </section>
