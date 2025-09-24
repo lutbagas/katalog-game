@@ -41,7 +41,7 @@ export function LoginForm(){
   } 
   return (
     <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100  ">
-      <h3 className="text-2xl text-center">Login</h3>
+      <h3 className="text-2xl text-center font-semibold">Login</h3>
       <input 
         type="email"
         value={email}
@@ -49,7 +49,7 @@ export function LoginForm(){
         autoComplete="new-email"
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-sky-400"
+        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
       />
       <input 
         type="password"
@@ -58,13 +58,13 @@ export function LoginForm(){
         autoComplete="new-password"
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-sky-00"
+        className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
       />
-      <button className={` p-2 w-full ${disabled? "bg-gray-400": "bg-sky-400 hover:bg-sky-600 cursor-pointer"}`}
+      <button className={` p-2 w-full transition-colors hover:scale-105 ${disabled? "bg-gray-700": "bg-violet-800 hover:bg-purple-700 cursor-pointer"}`}
       disabled={disabled || loading}>
         {loading ? "Memproses..." : "Masuk"}
-        {loading && <PiSpinnerGapBold className="ml-2 animate-spin" />}
       </button>
+        {loading && <PiSpinnerGapBold className="ml-2 animate-spin" />}
         {message.text && <p className={message.type === "success"? "text-green-500": "text-red-500"}>{message.text}</p>}
     </form>
   )

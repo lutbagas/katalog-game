@@ -9,11 +9,15 @@ export function RegisterForm(){
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const router = useRouter();
 
   const handleSubmit = async (e:React.FormEvent) => {
     e.preventDefault();
     setLoading(true)
+    if (disabled) return;
+    setDisabled(true);
+    setTimeout(() => {setDisabled(false)}, 750)
     try {
       const res = await fetch ("api/auth/register", {
         method: "POST",
@@ -21,7 +25,7 @@ export function RegisterForm(){
         headers: {"Content-Type": "application/json"}
       })
       if (res.ok){
-        setTimeout(() => router.push("/login"), 1500)
+        setTimeout(() => router.push("/login"), 2500)
         setMessage("Register Berhasil")
       } else {
         setMessage("Register gagal")
@@ -54,7 +58,8 @@ export function RegisterForm(){
       />
       <button 
         type="submit"
-        className="bg-blue-500 w-full p-3 hover:bg-blue-700 cursor-pointer">
+        disabled={disabled}
+        className={` w-full p-3 cursor-pointer ${disabled? "bg-gray-500": "bg-violet-800 hover:bg-purple-700"}`}>
           {loading? "Memproses..." : "Masuk"}
           {message? <TbLoader2 className="animate-spin" /> : ""}
         </button>
