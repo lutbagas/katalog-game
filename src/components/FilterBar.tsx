@@ -30,7 +30,6 @@ export function FilterBar(){
         <option value="4">4 keatas</option>
         <option value="3">3 Keatas</option>
         <option value="2">2 keatas</option>
-
       </select>
     </div>
   )
