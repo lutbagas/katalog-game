@@ -6,6 +6,7 @@ export interface Rating {
 
 export interface Genre {
   name: string;
+  slug: string;
 }
 
 export interface Developer {
