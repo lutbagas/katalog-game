@@ -12,7 +12,7 @@ export function RegisterForm(){
   const [disabled, setDisabled] = useState(false);
   const router = useRouter();
 
-  const handleSubmit = async (e:React.FormEvent) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true)
     if (disabled) return;
