@@ -1,27 +1,27 @@
+import bcrypt from 'bcrypt';
+import { NextResponse } from 'next/server';
 
-import { prisma } from "@/lib/prisma";
-import { NextResponse } from "next/server";
-import bcrypt from "bcrypt";
+import { prisma } from '@/lib/prisma';
 
-export async function POST(req: Request){
-  try{
+export async function POST(req : Request) {
+  try {
     const body = await req.json();
-    const email = String(body?.email ?? "").toLowerCase().trim();
-    const password = String(body?.password ?? "");
+    const email = String(body?.email ?? '').trim().toLowerCase();
+    const password = String(body?.password ?? '');
 
-    if (!email || !password || password.length < 6){
-      return NextResponse.json({error: "Email atau password tidak valid"}, {status:400});
+    if (!email || !password || password.length < 6) {
+      return NextResponse.json({ error: 'Email atau password salah'}, { status: 400 });
     }
-    const passwordHash = await bcrypt.hash(password, 10)
+    const passwordHash = await bcrypt.hash(password, 10);
     const user = await prisma.user.create({
-      data: {email, passwordHash},
-      select: {id: true, email: true}
-    });
-    return NextResponse.json({success:"email dan password berhasil dibuat", user}, {status: 201})
-  } catch(e: any){
-    if (e?.code === "P2002"){
-      return NextResponse.json({error:"Email sudah digunakan"}, {status:409});
+      data: { email, passwordHash },
+      select: { id: true, email: true },
+    })
+    return NextResponse.json({ success: 'Email berhasil dibuat' }, { status: 201});
+  } catch(e: any) {
+    if (e?.code === "P2002") {
+      return NextResponse.json({ error: 'Email sudah digunakan' }, { status: 400 });
     }
-    return NextResponse.json({error: "terjadi kesalahan pada server"}, {status:500})
+    return NextResponse.json({ error: 'Tidak dapat terhubung dengan server' }, { status: 500})
   }
 }
