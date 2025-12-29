@@ -45,14 +45,14 @@ export function UsersPage() {
   };
 
   return (
-    <div>
+    <div className="bg-gray-900 p-5 space-y-4">
       <BackButton/>
-      <h1>Daftar User</h1>
+      <h1 className="text-center">Daftar User</h1>
       <ul>
         {users.map(user => (
           <li key={user.id}>
             {user.email}
-            <button onClick={() => handleDeleteUser(user.id)}>Hapus</button>
+            <button onClick={() => handleDeleteUser(user.id)} className="px-5 py-2 cursor-pointer">Hapus</button>
           </li>
         ))}
       </ul>

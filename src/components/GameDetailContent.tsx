@@ -52,15 +52,17 @@ export function GameDetailContent({ game }: { game: Game }) {
         {game.released || "-"}
       </p>
 
-      {game.website && (
+      {game.website ? (
         <a
           href={game.website}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-1 px-3 py-2 bg-[#6ec1e4] text-white rounded-lg font-semibold shadow hover:bg-[#7f7fd5] transition"
+          className="mt-1 px-3 py-2 bg-[#3D63DD] text-white rounded-lg font-semibold shadow hover:bg-[#7f7fd5] transition"
         >
           Visit Official Website
         </a>
+      ): (
+        <p className="text-center bg-blue-400 p-1.5 rounded-xl font-bold">Tidak ada Website</p>
       )}
     </div>
   );

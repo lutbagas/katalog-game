@@ -17,15 +17,15 @@ export function FilterBar() {
     router.push(`/catalog?${params.toString()}`);
   }
   return(
-    <div className="space-x-2">
-      <select onChange={handleGenreChange} className="text-black bg-white"
+    <div className="space-x-3">
+      <select onChange={handleGenreChange} className="text-white bg-black px-2"
         defaultValue={searchParams.get("genre") || ""}>
         <option value="">Semua Genre</option>
         <option value="action">Action</option>
         <option value="role-playing-games-rpg">RPG</option>
         <option value="Adventure">Adventure</option>
       </select>
-      <select onChange={handleRatingChange} className="text-black bg-white"
+      <select onChange={handleRatingChange} className="text-white bg-black px-2"
         defaultValue={searchParams.get("rating") || ""}>
         <option value="">Semua Rating</option>
         <option value="4">4 Keatas</option>

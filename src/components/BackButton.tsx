@@ -3,13 +3,13 @@ import { useState } from "react"
 
 export function BackButton(){
   const router = useRouter();
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(false)
 
   const handleBack = () => {
     if (disabled) return;
-    setDisabled(true);
-    router.back();
-    setTimeout(() => {setDisabled(false)}, 500)
+    setDisabled(true)
+    router.back()
+    setTimeout(() => setDisabled(false), 750)
   }
 
   return(
