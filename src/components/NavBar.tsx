@@ -3,9 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { ThemeSwitch } from "./ThemeSwitch";
-import { SwitchBG } from "./SwitchBG";
-import { BackgroundLayout } from "./BackgroundLayout";
 import { useTheme } from "@/app/ThemeContext/ThemeContext";
 import { MdNightlightRound } from "react-icons/md";
 import { IoSunny } from "react-icons/io5";
