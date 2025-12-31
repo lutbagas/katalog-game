@@ -1,6 +1,6 @@
 import "./globals.css";
 import { BackgroundLayout } from "@/components/BackgroundLayout";
-import { ThemeProvider } from "./ThemeContext_temp/ThemeContext";
+import { ThemeProvider } from "./ThemeContext/ThemeContext";
 export default function RootLayout({
   children,
 }: {

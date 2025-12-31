@@ -1,6 +1,6 @@
 "use client";
 
-import { useTheme } from "@/app/ThemeContext_temp/ThemeContext";
+import { useTheme } from "@/app/ThemeContext/ThemeContext";
 
 
 export function BackgroundLayout({

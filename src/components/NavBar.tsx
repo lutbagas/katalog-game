@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useTheme } from "@/app/ThemeContext_temp/ThemeContext";
+import { useTheme } from "@/app/ThemeContext/ThemeContext";
 import { MdNightlightRound } from "react-icons/md";
 import { IoSunny } from "react-icons/io5";
 
