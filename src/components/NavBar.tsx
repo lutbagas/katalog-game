@@ -53,7 +53,7 @@ export function Navbar() {
         >
           🎮 Katalog Game
         </h1>
-        <div className="fixed right-30">
+        <div className="relative left-10 ">
         <button
           onClick={handleClick}
           className={`${disabled ? 'bg-red-400' : 'bg-sky-400' } rounded-xl border border-white/20  px-4 py-2 text-sm text-white backdrop-blur cursor-pointer`}

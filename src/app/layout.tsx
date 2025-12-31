@@ -1,5 +1,6 @@
 import "./globals.css";
-
+import { BackgroundLayout } from "@/components/BackgroundLayout";
+import { ThemeProvider } from "./ThemeContext/ThemeContext";
 export default function RootLayout({
   children,
 }: {
@@ -7,7 +8,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-tr from-blue-100 to-violet-200 min-h-screen">{children}</body>
+      <body>
+      <ThemeProvider>
+        <BackgroundLayout>
+          {children}
+        </BackgroundLayout>
+      </ThemeProvider>
+      </body>
     </html>
   );
 }

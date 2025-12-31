@@ -74,7 +74,7 @@ export default async function CatalogPage({ searchParams }: { searchParams: SP }
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-[#223159] via-[#312965] to-[#20697a] text-neutral-100">
+    <main className="min-h-screen text-neutral-100">
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-6">
         
         {/* Header */}

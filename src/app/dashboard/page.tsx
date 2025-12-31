@@ -23,7 +23,7 @@ export default async function DashboardPage() {
 
 
   return (
-    <main className="min-h-screen bg-slate-800 text-neutral-100">
+    <main className="min-h-screen  text-neutral-100">
       <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-semibold">Dashboard</h1>

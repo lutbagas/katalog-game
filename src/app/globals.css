@@ -19,11 +19,11 @@
   }
 }
 
-body {
+/* body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-}
+} */
 
 @keyframes gradient-move {
   0% {
@@ -42,5 +42,15 @@ body {
   animation: gradient-move 9s ease infinite;
 }
 
+body {
+  background: white;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.theme-alt body {
+  background: #fef3c7;
+  color: #92400e;
+}
 
 

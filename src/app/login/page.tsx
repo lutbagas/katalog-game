@@ -1,5 +1,5 @@
-// app/register/page.tsx
-"use client"
+// app/login/page.tsx
+
 import { LoginForm } from "@/components/LoginForm";
 import { HomeButton } from "@/components/HomeButton";
 
