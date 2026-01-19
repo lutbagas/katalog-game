@@ -7,7 +7,7 @@ import { TbLoader2 } from "react-icons/tb";
 export function RegisterForm(){
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState<{text: string; type: 'Success' | 'Error' | ''}>({ text: '', type: ''});
   const [loading, setLoading] = useState(false);
   const [disabled, setDisabled] = useState(false);
   const router = useRouter();
@@ -26,13 +26,12 @@ export function RegisterForm(){
       })
       if (res.ok){
         setTimeout(() => router.push("/login"), 2500)
-        setMessage("Register Berhasil")
+        setMessage({text: "Register Berhasil", type:'Success'})
       } else {
-        setMessage("Register gagal")
+        setMessage({text: "Register Gagal", type: 'Error'})
       }
     } catch (e) {
       console.log(e)
-      setMessage("Gagal terhubung dengan server")
     } finally {
       setLoading(false)
     }
@@ -61,8 +60,11 @@ export function RegisterForm(){
         disabled={disabled}
         className={` w-full p-3 cursor-pointer ${disabled? "bg-gray-500": "bg-violet-800 hover:bg-purple-700"}`}>
           {loading? "Memproses..." : "Masuk"}
-          {message? <TbLoader2 className="animate-spin" /> : ""}
+          {loading? <TbLoader2 className="animate-spin" /> : ""}
         </button>
+        <p className={message.type == 'Success'? 'text-green-600' : 'text-red-600'}>
+        {message.text}
+        </p>
     </form>
   )
 }

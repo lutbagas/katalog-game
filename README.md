@@ -61,4 +61,6 @@ Sesuaikan nilai environment dengan konfigurasi lokal Anda.
 
 ## Lisensi
 
-Lisensi belum ditentukan.
+MIT License
+
+Copyright (c) 2026 Lutfi Bagas
