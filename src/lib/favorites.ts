@@ -1,9 +1,9 @@
 import { fetchGames } from "@/lib/rawg-api";
 
-type FavoriteOptions = {
-  pageSize?: number;
-};
+type favoriteOptions = {
+    pageSize?: number;
+}
 
-export async function fetchFavoriteGames({ pageSize = 8 }: FavoriteOptions = {}) {
-  return fetchGames({ pageSize, ordering: "-rating" });
+export async function fetchFavoriteGames({ pageSize = 8 }: favoriteOptions = {}) {
+    return fetchGames({ pageSize, ordering: '-rating'})
 }
