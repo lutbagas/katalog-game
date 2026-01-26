@@ -3,11 +3,12 @@ import { Game } from "@/types/game.types";
 import  Image  from "next/image";
 import { Developer } from "@/types/game.types";
 import { Publisher } from "@/types/game.types";
-import { Genre } from "@/types/game.types"
+import { Genre } from "@/types/game.types";
+import { CardDetailLayout } from "./CardDetailLayout";
 
 export function GameDetailContent({ game }: { game: Game }) {
   return (
-    <div className="max-w-2xl mx-auto bg-gradient-to-bl from-blue-900 to-cyan-700 via-sky-800 rounded-2xl shadow-lg p-8 mt-8 flex flex-col items-center">
+    <CardDetailLayout>
       <Image
         src={game.background_image}
         alt=""
@@ -64,7 +65,7 @@ export function GameDetailContent({ game }: { game: Game }) {
       ): (
         <p className="text-center bg-blue-400 p-1.5 rounded-xl font-bold">Tidak ada Website</p>
       )}
-    </div>
+    </CardDetailLayout>
   );
 }
 

@@ -22,7 +22,7 @@ export default async function GameDetailPage({
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-linear-[135deg,_#223159,_#312965,_#20697a,_#23395d,_#b89b6b] p-6">
+      <main className="min-h-screen  p-6">
         <GameDetailContent game={game} />
       </main>
     </>
