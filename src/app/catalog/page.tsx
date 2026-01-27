@@ -132,9 +132,9 @@ export default async function CatalogPage({ searchParams }: { searchParams: SP }
                 : "hover:bg-neutral-900"
             }`}
           >
-            &larr; Sebelumnya
+            &larr;Sebelumnya
           </Link>
-          <span className="text-xs text-neutral-500">Halaman {page}</span>
+          <span className="text-sm text-neutral-500">Halaman{page}</span>
           <Link
             href={build(page + 1)}
             className={`rounded-xl border px-4 py-2 text-sm  ${
@@ -143,7 +143,7 @@ export default async function CatalogPage({ searchParams }: { searchParams: SP }
                 : "hover:bg-neutral-900"
             }`}
           >
-            Berikutnya &rarr;
+            Berikutnya&rarr;
           </Link>
         </div>
       </div>
