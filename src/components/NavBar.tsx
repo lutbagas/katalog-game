@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "@/app/ThemeContext/ThemeContext";
 import { MdNightlightRound } from "react-icons/md";
 import { IoSunny } from "react-icons/io5";
+import { MdGamepad } from "react-icons/md";
 
 export function Navbar() {
   const [logged, setLogged] = useState(false);
@@ -48,10 +49,13 @@ export function Navbar() {
       <div className="max-w-8xl mx-auto flex items-center justify-between px-6">
         {/* Logo / Title */}
         <h1
-          className="text-md xl:text-xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight cursor-pointer"
+          className="flex items-center text-md xl:text-xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight cursor-pointer"
           onClick={() => router.push("/")}
         >
-          🎮 Katalog Game
+          <MdGamepad className="text-md xl:text-xl text-blue-400 animate-spin [animation-duration:3s]"/>
+          <span className="mx-2.5 text-md xl:text-xl">
+            katalog game
+          </span>
         </h1>
         <div className="relative left-4 lg:left-80 md:left-50 sm:left-30 xl:left-115">
           <button
