@@ -28,7 +28,7 @@ export function GameCard({game}: {game : Game}) {
         <p className="text-center">Genre: {game.genres[0]?.name ?? game.genres[0]?.slug}</p>
       </div>
       <div className="text-center mt-auto mb-1">
-        <Link href={`/game/${game.id}`} className="block w-full bg-emerald-500 p-2.5 rounded-lg hover:bg-sky-700/90 text-sm pt-1 pb-1 " >Detail</Link>
+        <Link href={`/game/${game.id}`} className="block w-full bg-emerald-500 p-2.5 rounded-lg hover:bg-sky-700/90 text-md pt-1 pb-1" >Detail</Link>
       </div>
     </div>
   </CardLayout>

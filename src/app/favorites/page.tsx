@@ -3,6 +3,7 @@ import { Navbar } from "@/components/NavBar";
 import { GameCard } from "@/components/GameCard";
 import { fetchFavoriteGames } from "@/lib/favorites";
 import { Game } from "@/types/game.types";
+import { BackgroundLayout } from "@/components/BackgroundLayout";
 
 export default async function FavoritesPage() {
   const favorites = await fetchFavoriteGames({ pageSize: 12 });
@@ -10,7 +11,7 @@ export default async function FavoritesPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gradient-to-br from-[#223159] via-[#312965] to-[#20697a] text-white">
+      <main className="min-h-screen text-white">
         <section className="mx-auto max-w-7xl px-6 py-12">
           <div className="mb-6 flex items-center justify-between">
             <div>
