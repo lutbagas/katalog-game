@@ -48,7 +48,7 @@ export function Navbar() {
       <div className="max-w-8xl mx-auto flex items-center justify-between px-6">
         {/* Logo / Title */}
         <h1
-          className="text-sm xl:text-xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight cursor-pointer"
+          className="text-md xl:text-xl font-extrabold bg-gradient-to-r from-blue-600 via-purple-600 to-yellow-600 bg-clip-text text-transparent drop-shadow tracking-tight cursor-pointer"
           onClick={() => router.push("/")}
         >
           🎮 Katalog Game
