@@ -1,6 +1,6 @@
 // app/api/login/route.ts
 import { NextResponse } from 'next/server';
-import { loginService } from '@/services/auth.service';
+import { loginService } from '@/services/login.service';
 
 export async function POST(req: Request) {
   try {
