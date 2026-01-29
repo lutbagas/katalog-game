@@ -44,8 +44,8 @@ export default async function HomePage() {
 
         <section className="mx-auto max-w-7xl px-6 pb-16">
           <div className="mb-4 flex justify-between">
-            <h2 className="text-2xl font-semibold">🔥 Recommended Game</h2>
-            <Link href="/catalog" className="text-sm text-white/85">
+            <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-2xl xl:text-2xl font-semibold">🔥 Recommended Game</h2>
+            <Link href="/catalog" className="text-md text-white/85">
               See All
             </Link>
           </div>
