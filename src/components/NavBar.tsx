@@ -60,7 +60,7 @@ export function Navbar() {
         <div className="relative left-4 lg:left-80 md:left-50 sm:left-30 xl:left-115">
           <button
             onClick={handleClick}
-            className={`${disabled ? 'bg-red-400' : 'bg-sky-400' } rounded-xl border border-white/20  px-4 py-2 text-sm text-white backdrop-blur cursor-pointer`}
+            className={`${disabled ? 'bg-red-400 hover:bg-red-300' : 'bg-sky-400 hover:bg-blue-300' } rounded-xl border border-white/20  px-4 py-2 text-sm text-white backdrop-blur cursor-pointer`}
             disabled={disabled}
           >
             {alt ? <MdNightlightRound className="text-xl" /> : <IoSunny className="text-xl" />}
