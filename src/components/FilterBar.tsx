@@ -26,7 +26,7 @@ export function FilterBar() {
         <option value="Adventure">Adventure</option>
       </select>
       <select onChange={handleRatingChange} className="text-sky-400 bg-transparent ring-1 ring-black px-2"
-        defaultValue={searchParams.get("rating") || ""}>
+        defaultValue={searchParams.get("Rating") || ""}>
         <option value="">Semua Rating</option>
         <option value="4">4 Keatas</option>
         <option value="3">3 Keatas</option>

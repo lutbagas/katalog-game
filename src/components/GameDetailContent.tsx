@@ -14,7 +14,7 @@ export function GameDetailContent({ game }: { game: Game }) {
         alt=""
         width={500}
         height={500}
-        quality={80}
+        quality={100}
         placeholder="blur"
         blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB..."
         className="w-full h-56 object-cover rounded-xl mb-6 shadow"
@@ -26,10 +26,17 @@ export function GameDetailContent({ game }: { game: Game }) {
       {/* ✅ perbaikan bagian description */}
       <p className="text-white mb-4 text-center text-xs">
         {game.description_raw
-          ? game.description_raw.split(" ").slice(0, 50).join(" ") + "..."
-            : "No description available."}
+        ? game.description_raw
+        .split(" ")
+        .slice(0, 50)
+        .map((word, index) => (
+          <span key={index}>
+            {word}{" "}
+            {(index + 1) % 8 === 0 && <br />}
+          </span>
+        ))
+        : "No description available."}
       </p>
-
       <p className="text-sm text-white mb-2">
         <span className="font-semibold">Developer:</span>{" "}
         {game.developers?.length > 0

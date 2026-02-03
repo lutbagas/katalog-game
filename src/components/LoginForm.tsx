@@ -76,7 +76,7 @@ export function LoginForm(){
       />
 
       <button 
-        className={`p-2 w-full transition-colors hover:scale-105 ${loading ? "bg-gray-700" : "bg-violet-800 cursor-pointer"}`}
+        className={`p-2 w-full transition-colors hover:bg-purple-800 hover:scale-105 ${loading ? "bg-gray-700" : "bg-violet-900 cursor-pointer"}`}
         disabled={loading}
       >
         {loading ? "Memproses..." : "Masuk"}
