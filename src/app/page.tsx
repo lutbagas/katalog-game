@@ -33,7 +33,7 @@ export default async function HomePage() {
           </form>
 
           <div className="mt-5 flex justify-center gap-3">
-            <Link href="/catalog" className="rounded-xl bg-blue-600/60 px-5 py-2 font-semibold hover:bg-blue-600">
+            <Link href="/catalog" className="rounded-xl bg-blue-600/60 px-5 py-2 font-semibold hover:bg-blue-600 transition-colors">
               Open Catalog
             </Link>
             <Link href="/favorites" className="rounded-xl border border-white/20 bg-black/10 px-5 py-2 hover:bg-gray-700">
