@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { fetchGames, FetchOpts } from "@/lib/rawg-api";
 import { GameCard } from "@/components/GameCard";
+import { HomeButton } from "@/components/HomeButton";
 
 type CatalogSearchParams = {
   page?: string;
@@ -31,6 +32,7 @@ export default async function CatalogPage({
   };
   return(
     <main className="min-h-screen text-neutral-100">
+      <HomeButton/>
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-6">
         <header className="flex items-center justify-between gap-3">
           <div>

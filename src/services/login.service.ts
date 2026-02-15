@@ -14,6 +14,7 @@ export async function loginService({ email, password }: any) {
   });
 
   if (!user) {
+    console.log(new Date().toISOString(),  '[LOGIN] input tidak valid');
     throw { message: 'Email atau password salah', statusCode: 400 };
   }
 
