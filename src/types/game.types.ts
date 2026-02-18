@@ -39,3 +39,11 @@ export type user = {
   id: string;
   email: string;
 }
+
+export type FetchOpts = {
+  page?: number;
+  pageSize?: number;
+  search?: string;
+  genres?: string;
+  ordering?: string;
+}
