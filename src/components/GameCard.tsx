@@ -19,7 +19,7 @@ export function GameCard({game}: {game : Game}) {
       <div className="mb-3">
         <Image src={game.background_image || "/placeholder.jpg"} 
         alt="" width={500} height={500} loading="lazy" quality={50}
-         className={game.background_image? "rounded-lg object-cover": "rounded-lg bg-gray-800 p-1.5"}></Image>
+         className={game.background_image? "rounded-3xl object-cover": "rounded-lg bg-gray-800 p-1.5"}></Image>
       </div>
       <div className="space-y-1 pb-4.5">
         <h3 className="text-center font-semibold">{game.name}</h3>

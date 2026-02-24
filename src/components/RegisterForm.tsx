@@ -37,7 +37,7 @@ export function RegisterForm(){
     }
   }
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-800 p-7 space-y-3">
+    <form onSubmit={handleSubmit} className="bg-gray-800 p-7 space-y-3 rounded-xl">
       <h3 className="text-2xl text-center">Register</h3>
       <input 
         type="email"

@@ -1,14 +1,8 @@
 // src/lib/rawg-api.ts
+import { FetchOpts } from "@/types/game.types";
 const API = "https://api.rawg.io/api";
 const KEY = process.env.RAWG_KEY || process.env.NEXT_PUBLIC_RAWG_KEY;
 
-export type FetchOpts = {
-  page?: number;
-  pageSize?: number;
-  search?: string;
-  genres?: string;
-  ordering?: string;
-}
 export async function fetchGames(opts: FetchOpts){
   if (!KEY){
     throw new Error("rawg belum di set")

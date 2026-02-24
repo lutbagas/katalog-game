@@ -52,9 +52,9 @@ export function LoginForm(){
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-120">
+    <div className="min-h-screen flex items-center justify-center">
 
-      <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100">
+      <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100 rounded-xl shadow-md shadow-violet-500/20">
         <h3 className="text-2xl text-center font-semibold">Login</h3>
 
         <input 

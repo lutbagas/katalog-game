@@ -1,12 +1,11 @@
 import Link from "next/link";
-import { fetchGames, FetchOpts } from "@/lib/rawg-api";
+import { fetchGames } from "@/lib/rawg-api";
 import { GameCard } from "@/components/GameCard";
 import { HomeButton } from "@/components/HomeButton";
+import { FetchOpts } from "@/types/game.types";
+import { CatalogSearchParams } from '@/types/game.types'
 
-type CatalogSearchParams = {
-  page?: string;
-  query?: string;
-};
+
 
 export default async function CatalogPage({
   searchParams,

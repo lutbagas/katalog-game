@@ -47,3 +47,8 @@ export type FetchOpts = {
   genres?: string;
   ordering?: string;
 }
+
+export type CatalogSearchParams = {
+  page?: string;
+  query?: string;
+};
