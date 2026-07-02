@@ -16,16 +16,14 @@ export function GameDetailContent({
 }) {
   return (
     <CardDetailLayout>
-      <Image
-        src={game.background_image || "/placeholder.jpg"}
-        alt=""
-        width={500}
-        height={500}
-        quality={100}
-        placeholder="blur"
-        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAB..."
-        className="w-full h-56 object-cover rounded-xl mb-6 shadow"
-      />
+      <div className="mb-6 w-full">
+        <ScreenshotSlider
+          screenshots={screenshots}
+          fallbackImage={game.background_image}
+          gameName={game.name}
+        />
+      </div>
+  
       <h1 className="text-3xl font-bold text-indigo-400 mb-2 text-center">
         {game.name}
       </h1>
@@ -67,13 +65,6 @@ export function GameDetailContent({
         {game.released || "-"}
       </p>
 
-      <div className="mb-6 w-full">
-        <ScreenshotSlider
-          screenshots={screenshots}
-          fallbackImage={game.background_image}
-          gameName={game.name}
-        />
-      </div>
 
       {game.website ? (
         <a
