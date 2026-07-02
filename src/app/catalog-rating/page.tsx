@@ -10,7 +10,7 @@ import { CatalogSearchParams } from '@/types/game.types'
 export default async function CatalogPage({
   searchParams,
 }: {
-  searchParams: CatalogSearchParams;
+  searchParams: Promise<CatalogSearchParams>;
 }) {
   const params = await searchParams;
   const currentPage = Number(params.page || 1) || 1;
@@ -26,7 +26,7 @@ export default async function CatalogPage({
   const buildUrl = (targetPage: number) => {
     const queryParams = new URLSearchParams();
     if (searchQuery) queryParams.set("query", searchQuery);
-    queryParams.set("Page", String(targetPage));
+    queryParams.set("page", String(targetPage));
     return `catalog?${queryParams.toString()}`;
   };
   return(

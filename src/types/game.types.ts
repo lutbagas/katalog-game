@@ -21,6 +21,13 @@ export interface Publisher {
   image_background: string;
 }
 
+export interface GameScreenshot {
+  id: number;
+  image: string;
+  width?: number;
+  height?: number;
+}
+
 export interface Game {
   id: number;
   name?: string;

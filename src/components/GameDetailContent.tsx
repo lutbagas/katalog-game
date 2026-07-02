@@ -1,16 +1,23 @@
 "use client";
-import { Game } from "@/types/game.types";
+import { Game, GameScreenshot } from "@/types/game.types";
 import  Image  from "next/image";
 import { Developer } from "@/types/game.types";
 import { Publisher } from "@/types/game.types";
 import { Genre } from "@/types/game.types";
 import { CardDetailLayout } from "./CardDetailLayout";
+import { ScreenshotSlider } from "./ScreenshotSlider";
 
-export function GameDetailContent({ game }: { game: Game }) {
+export function GameDetailContent({
+  game,
+  screenshots,
+}: {
+  game: Game;
+  screenshots: GameScreenshot[];
+}) {
   return (
     <CardDetailLayout>
       <Image
-        src={game.background_image}
+        src={game.background_image || "/placeholder.jpg"}
         alt=""
         width={500}
         height={500}
@@ -59,6 +66,14 @@ export function GameDetailContent({ game }: { game: Game }) {
         <span className="font-semibold">Release Date:</span>{" "}
         {game.released || "-"}
       </p>
+
+      <div className="mb-6 w-full">
+        <ScreenshotSlider
+          screenshots={screenshots}
+          fallbackImage={game.background_image}
+          gameName={game.name}
+        />
+      </div>
 
       {game.website ? (
         <a

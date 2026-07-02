@@ -1,5 +1,6 @@
 // app/catalog/page.tsx
 import Link from "next/link";
+import { Suspense } from "react";
 import { fetchGames } from "@/lib/rawg-api";
 import { GameCard } from "@/components/GameCard";
 import { FilterBar } from "@/components/FilterBar"; // ✅ tambahkan ini
@@ -12,12 +13,17 @@ type SP = {
   q?: string; 
 };
 
-export default async function CatalogPage({ searchParams }: { searchParams: SP }) {
-  const view = (searchParams.view || "rating") as "rating" | "released" | "genres";
-  const page = Number(searchParams.page || 1) || 1;
-  const q = (searchParams.q || "").trim();
-  const genre = (searchParams.genre || "").trim();
-  const rating = (searchParams.rating || "").trim();
+export default async function CatalogPage({
+  searchParams,
+}: {
+  searchParams: Promise<SP>;
+}) {
+  const params = await searchParams;
+  const view = (params.view || "rating") as "rating" | "released" | "genres";
+  const page = Number(params.page || 1) || 1;
+  const q = (params.q || "").trim();
+  const genre = (params.genre || "").trim();
+  const rating = (params.rating || "").trim();
 
   // ✅ buat opsi pemanggilan API
   const opts = (ordering?: string, g?: string) => ({
@@ -109,7 +115,9 @@ export default async function CatalogPage({ searchParams }: { searchParams: SP }
             </div>
           </form>
         </header>
-        <FilterBar />
+        <Suspense fallback={null}>
+          <FilterBar />
+        </Suspense>
         {data.length === 0 ? (
           <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-8 text-center">
             <p className="text-neutral-300">Tidak ada hasil.</p>

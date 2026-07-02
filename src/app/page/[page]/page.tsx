@@ -7,9 +7,10 @@ import { fetchGames } from "@/lib/rawg-api";
 export default async function GameListPage({
   params,
 }: {
-  params: { page: string; };
+  params: Promise<{ page: string; }>;
 }) {
-  const pageNum = parseInt(params.page, 10) || 1;
+  const { page } = await params;
+  const pageNum = parseInt(page, 10) || 1;
   const PAGE_SIZE = 12;
 
   const games = await fetchGames({ page: pageNum, pageSize: PAGE_SIZE, ordering: "-rating" });
