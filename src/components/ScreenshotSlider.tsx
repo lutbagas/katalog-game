@@ -49,7 +49,7 @@ export function ScreenshotSlider({
   return (
     <section className="w-full space-y-3">
       <div className="flex items-center justify-between gap-3">
-        <h2 className="text-lg font-semibold text-white">Screenshot</h2>
+        <h2 className="text-lg font-semibold text-white">Preview Game</h2>
         <p className="text-sm text-white/70">
           {activeIndex + 1} / {slides.length}
         </p>
@@ -103,6 +103,7 @@ export function ScreenshotSlider({
             >
               <Image
                 src={slide.image}
+                quality={1}
                 alt=""
                 fill
                 sizes="96px"
