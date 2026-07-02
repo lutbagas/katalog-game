@@ -103,29 +103,17 @@ export function Navbar() {
                 <>
                   <Link
                     href="/login"
-                    className="block px-4 py-2 hover:bg-gray-100 transition"
+                    className="block px-4 py-2 hover:bg-gray-300 transition my-1"
                     onClick={() => setMenuOpen(false)}
                   >
                     Login
                   </Link>
                   <Link
                     href="/register"
-                    className="block px-4 py-2 hover:bg-gray-100 transition"
+                    className="block px-4 py-2 hover:bg-gray-300 transition my-1"
                     onClick={() => setMenuOpen(false)}
                   >
                     Sign Up
-                  </Link>
-                  <Link
-                    href="/userPage"
-                    className="block px-4 py-2 hover:bg-gray-100 transition"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    Hapus
-                  </Link>
-                  <Link 
-                    href="/latihan"
-                    className="block px-4 py-2 hover:bg-gray-100">
-                      Latihan
                   </Link>
                 </>
               )}
