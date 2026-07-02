@@ -33,6 +33,7 @@ export interface Game {
   name?: string;
   released: string;
   background_image: string;
+  rating?: number;
   ratings: Rating[];
   genres: Genre[];
   website: string;

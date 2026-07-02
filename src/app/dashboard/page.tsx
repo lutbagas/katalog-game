@@ -1,5 +1,6 @@
 // app/dashboard/page.tsx
 import Link from "next/link";
+import { DashboardLibrary } from "@/components/DashboardLibrary";
 import { LogoutButton } from "@/components/LogoutButton";
 import { fetchGames } from "@/lib/rawg-api";
 import { cookies } from "next/headers";
@@ -108,6 +109,8 @@ export default async function DashboardPage() {
             </Link>
           ))}
         </section>
+
+        <DashboardLibrary />
 
         <Section title="Rating Tertinggi" items={top} />
         <Section title="Rilis Terbaru" items={recent} />
