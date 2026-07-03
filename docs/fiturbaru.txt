@@ -1,0 +1,19 @@
+Fitur Favorite
+
+Tujuan fitur: Agar orang lain atau teman tau game favorite kita
+Input: 
+1. Register dulu
+2. Login pada halaman Login
+3. lalu di dashboard ada explore game
+4. user klik game tertentu
+5. user klik button add to favorite
+6. halaman dashboard user akan terlihat ada favorite
+Proses:
+Output:
+1. pada bagian dashboard akan terlihat favorite apa saja yang sudah di add oleh user
+2. pada bagian explore community akan terlihat juga user beserta game favorit n
+Kemungkinan error:
+masih belum diketahui kemungkinan error
+
+
+
