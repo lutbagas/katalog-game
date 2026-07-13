@@ -4,6 +4,7 @@ import { LogoutButton } from "@/components/LogoutButton";
 import { fetchGames } from "@/lib/rawg-api";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { FavoritePageClient } from "@/components/FavoritePageClient";
 
 export default async function DashboardPage() {
   const LoggedIn = (await cookies()).get("loggedIn")?.value;
@@ -35,6 +36,7 @@ export default async function DashboardPage() {
         </div>
       </header>
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-8">
+        <FavoritePageClient/>
         {/* KPI */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {kpi.map(i => (

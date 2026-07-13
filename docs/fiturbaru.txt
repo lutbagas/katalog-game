@@ -16,4 +16,55 @@ Kemungkinan error:
 masih belum diketahui kemungkinan error
 
 
+gpt:
+Fitur: Favorite Game
 
+Kenapa fitur dibuat:
+User butuh cara untuk menyimpan game yang disukai dan menunjukkannya ke teman/community.
+
+Tujuan:
+User dapat menambahkan game ke daftar favorite.
+
+User flow:
+Login → Explore Game → Pilih game → Add to Favorite → Favorite muncul di Dashboard dan Community.
+
+Data:
+- user_id
+- game_id
+- created_at
+
+Proses:
+Sistem cek login → cek game → cek duplikat → simpan favorite → tampilkan ulang data.
+
+Output:
+Game favorite muncul di Dashboard user dan Explore Community.
+
+Kemungkinan error:
+- User belum login
+- Game tidak ditemukan
+- Game sudah ada di favorite
+- Gagal simpan ke database
+- Data favorite gagal dimuat
+
+Acceptance criteria:
+- User login bisa add favorite
+- Game yang sama tidak bisa masuk dua kali
+- Favorite tampil setelah berhasil ditambahkan
+
+
+
+fitur baru: played
+Kenapa fitur dibuat: 
+Tujuan: untuk orang lain agar melihat 
+User flow: user 
+Data:
+played_id
+name
+screenshot
+released date
+
+Proses:
+
+Output:
+Kemungkinan error:
+Acceptance criteria:
