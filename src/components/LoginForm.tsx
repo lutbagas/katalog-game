@@ -54,7 +54,7 @@ export function LoginForm(){
   return (
     <div className="min-h-screen flex items-center justify-center">
 
-      <form onSubmit={handleSubmit} className="bg-gray-950 p-9 space-y-5 text-indigo-100 rounded-xl shadow-md shadow-violet-500/20">
+      <form onSubmit={handleSubmit} className="bg-white/10 p-12 space-y-5 text-indigo-100 rounded-xl border-white/30 border-2 shadow-lg shadow-white/10">
         <h3 className="text-2xl text-center font-semibold">Login</h3>
 
         <input 
@@ -64,7 +64,7 @@ export function LoginForm(){
           autoComplete="new-email"
           onChange={(e) => setEmail(e.target.value)}
           required
-          className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
+          className="bg-gray-800/40 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
         />
 
         <input 
@@ -74,7 +74,7 @@ export function LoginForm(){
           autoComplete="new-password"
           onChange={(e) => setPassword(e.target.value)}
           required
-          className="bg-gray-800 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
+          className="bg-gray-800/40 w-full p-3 focus:ring-2 outline-none focus:ring-violet-500"
         />
 
         <button 

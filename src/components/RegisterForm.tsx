@@ -37,15 +37,15 @@ export function RegisterForm(){
     }
   }
   return (
-    <form onSubmit={handleSubmit} className="bg-gray-800 p-7 space-y-3 rounded-xl">
-      <h3 className="text-2xl text-center">Register</h3>
+    <form onSubmit={handleSubmit} className="bg-white/5 p-12 space-y-3 rounded-2xl border-white/30 border-2">
+      <h3 className="text-2xl text-center font-light py-3">Register</h3>
       <input 
         type="email"
         value={email}
         placeholder="Masukkkan Email"
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="w-full p-3"
+        className="w-full p-3 focus:ring-2 ring-purple-300/70 focus:outline-none"
       />
       <input 
         type="password"
@@ -53,12 +53,12 @@ export function RegisterForm(){
         placeholder="Masukkan Password"
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="w-full p-3" 
+        className="w-full p-3 focus:ring-2 ring-purple-300/70 focus:outline-none  " 
       />
       <button 
         type="submit"
         disabled={disabled}
-        className={` w-full p-3 cursor-pointer ${disabled? "bg-gray-500": "bg-violet-800 hover:bg-purple-700"}`}>
+        className={` w-full p-3 cursor-pointer transition-colors duration-150 ease-out ${disabled? "bg-gray-500": "bg-sky-600/40 hover:bg-sky-600/90 "}`}>
           {loading? "Memproses..." : "Masuk"}
           {loading? <TbLoader2 className="animate-spin" /> : ""}
         </button>
