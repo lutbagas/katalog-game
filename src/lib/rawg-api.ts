@@ -7,7 +7,7 @@ export async function fetchGames(opts: FetchOpts){
   if (!KEY){
     throw new Error("rawg belum di set")
   }
-  const {page= 12, pageSize= 1, search, genres, ordering} = opts;
+  const {page= 1, pageSize= 12, search, genres, ordering} = opts;
   const p = new URLSearchParams({
     key: KEY, 
     page_size: String(pageSize),
@@ -16,10 +16,19 @@ export async function fetchGames(opts: FetchOpts){
   if (search) p.set("search", search);
   if (genres) p.set("genres", genres)
   if (ordering) p.set("ordering", ordering);
-  const res = await fetch (`${API}/games?${p.toString()}`, { cache: "no-store" });
-  if (!res.ok) throw new Error("Gagal fetch RAWG");
-  const data = await res.json();
-  return data.results as any[]
+  try {
+    const res = await fetch (`${API}/games?${p.toString()}`, {
+      next: {
+        revalidate: 3600
+      }
+    });
+    if (!res.ok) throw new Error("Gagal fetch RAWG");
+    const data = await res.json();
+    return data.results as any[]
+  } catch(error) {
+    console.error(error);
+    return []
+  }
 
 }
 

@@ -22,6 +22,7 @@ model User {
   role         Role       @default(USER)
   createdAt    DateTime   @default(now())
   favorite     favorite[]
+  played       Played[]
 }
 
 model favorite {
@@ -29,6 +30,18 @@ model favorite {
   name             String
   released         String
   background_image String
+
+  userId String
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@id([id, userId])
+}
+
+model Played {
+  id               Int
+  name             String
+  released         String?
+  background_image String?
 
   userId String
   user   User   @relation(fields: [userId], references: [id])

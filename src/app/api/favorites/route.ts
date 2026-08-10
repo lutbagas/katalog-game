@@ -10,7 +10,7 @@ export async function POST(req: Request) {
 
     if(!userId) {
       return NextResponse.json(
-        { message: "User belum logiin / cookie userId tidak ada"},
+        { message: "User belum login / cookie userId tidak ada"},
         { status: 401 }
       );
     }
@@ -23,7 +23,7 @@ export async function POST(req: Request) {
         userId: userId,
       },
     });
-    return NextResponse.json(favorite);
+    return NextResponse.json(favorite, { status: 201 });
   } catch(error) {
     console.error("POST FAVORITE ERROR:", error);
 

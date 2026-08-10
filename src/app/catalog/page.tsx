@@ -115,7 +115,7 @@ export default async function CatalogPage({
             </div>
           </form>
         </header>
-        <Suspense fallback={null}>
+        <Suspense fallback={"Loading"}>
           <FilterBar />
         </Suspense>
         {data.length === 0 ? (

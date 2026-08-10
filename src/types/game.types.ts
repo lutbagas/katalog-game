@@ -68,3 +68,10 @@ export type Favorite = {
   background_image?: string;
 
 }
+
+export type Played = {
+  id: number,
+  name: string,
+  released?: string,
+  background_image?: string
+}

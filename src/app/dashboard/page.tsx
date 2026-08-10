@@ -5,6 +5,7 @@ import { fetchGames } from "@/lib/rawg-api";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { FavoritePageClient } from "@/components/FavoritePageClient";
+import { PlayedPageCLient } from "@/components/PlayedPageClient";
 
 export default async function DashboardPage() {
   const LoggedIn = (await cookies()).get("loggedIn")?.value;
@@ -25,7 +26,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen  text-neutral-100">
-      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-semibold">Dashboard</h1>
           <div className="flex items-center gap-2">
@@ -37,10 +38,11 @@ export default async function DashboardPage() {
       </header>
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-8">
         <FavoritePageClient/>
+        <PlayedPageCLient/>
         {/* KPI */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {kpi.map(i => (
-            <div key={i.label} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
+            <div key={i.label} className="rounded-2xl border border-white bg-white/10 p-5">
               <p className="text-sm text-neutral-300">{i.label}</p>
               <p className="mt-2 text-3xl font-semibold">{i.value}</p>
             </div>
