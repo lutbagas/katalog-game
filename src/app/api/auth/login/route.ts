@@ -14,6 +14,12 @@ export async function POST(req: Request) {
       path: '/',
       maxAge: 60 * 60,
     });
+    res.cookies.set("userId", result.id, {
+      httpOnly:true,
+      sameSite: "lax",
+      path:"/",
+      maxAge: 60 * 60,
+    })
 
     return res;
   } catch (e: any) {

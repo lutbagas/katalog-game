@@ -6,6 +6,8 @@ import { Publisher } from "@/types/game.types";
 import { Genre } from "@/types/game.types";
 import { CardDetailLayout } from "./CardDetailLayout";
 import { ScreenshotSlider } from "./ScreenshotSlider";
+import { FavButton } from "./FavButton";
+import { PlayedButton } from "./PlayedButton";
 
 export function GameDetailContent({
   game,
@@ -78,6 +80,8 @@ export function GameDetailContent({
       ): (
         <p className="text-center bg-blue-400 p-1.5 rounded-xl font-bold">Tidak ada Website</p>
       )}
+      <FavButton game={game}/>
+      <PlayedButton game={game}/>
     </CardDetailLayout>
   );
 }

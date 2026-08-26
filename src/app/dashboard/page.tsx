@@ -4,6 +4,8 @@ import { LogoutButton } from "@/components/LogoutButton";
 import { fetchGames } from "@/lib/rawg-api";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { FavoritePageClient } from "@/components/FavoritePageClient";
+import { PlayedPageCLient } from "@/components/PlayedPageClient";
 
 export default async function DashboardPage() {
   const LoggedIn = (await cookies()).get("loggedIn")?.value;
@@ -24,7 +26,7 @@ export default async function DashboardPage() {
 
   return (
     <main className="min-h-screen  text-neutral-100">
-      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur">
+      <header className="sticky top-0 z-10 border-b border-neutral-800 bg-slate-700/30 backdrop-blur-sm">
         <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
           <h1 className="text-xl font-semibold">Dashboard</h1>
           <div className="flex items-center gap-2">
@@ -35,22 +37,19 @@ export default async function DashboardPage() {
         </div>
       </header>
       <div className="mx-auto max-w-7xl px-6 py-8 space-y-8">
+        <FavoritePageClient/>
+        <PlayedPageCLient/>
         {/* KPI */}
         <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {kpi.map(i => (
-            <div key={i.label} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5">
+            <div key={i.label} className="rounded-2xl border border-white bg-white/10 p-5">
               <p className="text-sm text-neutral-300">{i.label}</p>
               <p className="mt-2 text-3xl font-semibold">{i.value}</p>
             </div>
           ))}
         </section>
         {/* Aksi cepat */}
-        <section className="flex flex-wrap gap-3">
-          {["Tambah Game", "Genre", "Impor CSV"].map((label, idx) => (
-            <Link key={label} href={["/games/new", "/genres", "/import"][idx]} className="rounded-2xl
-             border border-neutral-800 bg-neutral-900 px-4 py-2 text-sm hover:bg-neutral-850">{label}</Link>
-          ))}
-        </section>
+        
         <Section title="Rating Tertinggi" items={top} />
         <Section title="Rilis Terbaru" items={recent} />
       </div>
@@ -70,8 +69,7 @@ function Section({ title, items }: { title: string; items: any[] }) {
           <a key={g.id} href={`/game/${g.slug}`} className="group overflow-hidden rounded-2xl border
            border-neutral-800 bg-neutral-900 hover:bg-neutral-850">
             <div className="aspect-[16/9] overflow-hidden">
-              <img src={g.background_image} alt={g.name} className="h-full w-full object-cover
-               transition-transform duration-500 group-hover:scale-105" />
+              <img src={g.background_image ?? "/images/empty-image-placeholder2.png"} alt={g.name} className={`${g.background_image ? '' : 'scale-101 mt-1'  } h-full w-full object-cover transition-transform duration-500 group-hover:scale-105`} />
             </div>
             <div className="p-3">
               <div className="flex items-center justify-between gap-2">

@@ -3,6 +3,7 @@
 import { LoginForm } from "@/components/LoginForm";
 import { Suspense } from "react";
 import { useRouter } from "next/navigation";
+import { BackButton } from "@/components/BackButton";
 
 export default function LoginPage() {
   const router = useRouter()
@@ -14,8 +15,9 @@ export default function LoginPage() {
         </div>
       }
     >
-      <button className="bg-linear-to-br from-purple-600 via-purple-600 to to-purple-900 mx-5 my-10 rounded-xl px-2 py-2 cursor-pointer"
-      onClick={() => router.push('/')}>&larr; home</button>
+      <BackButton/>
+      {/* <button className="absolute top-15 left-15 bg-linear-to-br from-purple-600/30 via-purple-600/30 to to-purple-900/30   rounded-xl px-2 py-2 cursor-pointer"
+      onClick={() => router.push('/')}>&larr; home</button> */}
       <LoginForm />
     </Suspense>
   );
