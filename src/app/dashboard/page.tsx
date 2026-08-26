@@ -49,12 +49,7 @@ export default async function DashboardPage() {
           ))}
         </section>
         {/* Aksi cepat */}
-        <section className="flex flex-wrap gap-3">
-          {["Tambah Game", "Genre", "Impor CSV"].map((label, idx) => (
-            <Link key={label} href={["/games/new", "/genres", "/import"][idx]} className="rounded-2xl
-             border border-neutral-800 bg-neutral-900 px-4 py-2 text-sm hover:bg-neutral-850">{label}</Link>
-          ))}
-        </section>
+        
         <Section title="Rating Tertinggi" items={top} />
         <Section title="Rilis Terbaru" items={recent} />
       </div>
@@ -74,8 +69,7 @@ function Section({ title, items }: { title: string; items: any[] }) {
           <a key={g.id} href={`/game/${g.slug}`} className="group overflow-hidden rounded-2xl border
            border-neutral-800 bg-neutral-900 hover:bg-neutral-850">
             <div className="aspect-[16/9] overflow-hidden">
-              <img src={g.background_image} alt={g.name} className="h-full w-full object-cover
-               transition-transform duration-500 group-hover:scale-105" />
+              <img src={g.background_image ?? "/images/empty-image-placeholder2.png"} alt={g.name} className={`${g.background_image ? '' : 'scale-101 mt-1'  } h-full w-full object-cover transition-transform duration-500 group-hover:scale-105`} />
             </div>
             <div className="p-3">
               <div className="flex items-center justify-between gap-2">

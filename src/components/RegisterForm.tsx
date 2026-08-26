@@ -37,15 +37,15 @@ export function RegisterForm(){
     }
   }
   return (
-    <form onSubmit={handleSubmit} className="bg-white/5 p-12 space-y-3 rounded-2xl border-white/30 border-2">
-      <h3 className="text-2xl text-center font-light py-3">Register</h3>
+    <form onSubmit={handleSubmit} className="bg-white/10 p-12 space-y-4 rounded-2xl border-white/30 border-2">
+      <h3 className="text-2xl text-center font-light py-1 pb-5">Register</h3>
       <input 
         type="email"
         value={email}
         placeholder="Masukkkan Email"
         onChange={(e) => setEmail(e.target.value)}
         required
-        className="w-full p-3 focus:ring-2 ring-purple-300/70 focus:outline-none"
+        className="w-full p-3 focus:ring-2 ring-purple-400/70 focus:outline-none outline-1 outline-white/50"
       />
       <input 
         type="password"
@@ -53,7 +53,7 @@ export function RegisterForm(){
         placeholder="Masukkan Password"
         onChange={(e) => setPassword(e.target.value)}
         required
-        className="w-full p-3 focus:ring-2 ring-purple-300/70 focus:outline-none  " 
+        className="w-full p-3 focus:ring-2 ring-purple-400/70 focus:outline-none  outline-1 outline-white/50 " 
       />
       <button 
         type="submit"

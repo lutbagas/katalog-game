@@ -20,8 +20,8 @@ export function BackgroundLayout({
       <div
         className={`min-h-screen transition-all duration-500 ${
           alt
-            ? "bg-gradient-to-br from-[#1b2746] via-[#282254] to-[#1a5866] text-white"
-            : "bg-gradient-to-br from-[#223159] via-[#312965] to-[#20697a] text-white"
+            ? "bg-gradient-to-br from-[#1b2746] via-[#282254] to-[#13507c] text-white"
+            : "bg-gradient-to-br from-[#223159] via-[#312965] to-[#27608b] text-white"
         }`}
       >
         {children}

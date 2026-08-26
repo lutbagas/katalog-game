@@ -14,7 +14,7 @@ export async function GET(request: Request, {params}: { params: Promise<{id :str
                 email:true,
                 createdAt: true,
                 favorite:true,
-                played: true
+                played: true,
             }
         });
         if (!user) {

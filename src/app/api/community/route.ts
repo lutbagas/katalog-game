@@ -8,6 +8,7 @@ export async function GET() {
                 id: true,
                 email: true,
                 createdAt: true,
+                username: true,
             },
             orderBy:{
                 createdAt: 'desc'

@@ -17,11 +17,26 @@ export async function fetchGames(opts: FetchOpts){
   if (genres) p.set("genres", genres)
   if (ordering) p.set("ordering", ordering);
   try {
-    const res = await fetch (`${API}/games?${p.toString()}`, {
+    const url = `${API}/games?${p.toString()}`;
+    const requestTime = new Date().toLocaleTimeString();
+
+    console.log("\n ============= [RAWG] Request =============");
+    console.log("URL:", url);
+    console.log("Time", requestTime);
+
+    const res = await fetch(url, {
       next: {
-        revalidate: 3600
+        revalidate: 10
       }
     });
+
+    const responseTime = new Date().toLocaleTimeString();
+
+    console.log("================= [RAWG] Response ==========");
+    console.log("Status:", res.status);
+    console.log("Time:", responseTime);
+    
+    console.log("==============================\n")
     if (!res.ok) throw new Error("Gagal fetch RAWG");
     const data = await res.json();
     return data.results as any[]
