@@ -4,6 +4,7 @@ import { LoginForm } from "@/components/LoginForm";
 import { Suspense } from "react";
 import { useRouter } from "next/navigation";
 import { BackButton } from "@/components/BackButton";
+import { HomeButton } from "@/components/HomeButton";
 
 export default function LoginPage() {
   const router = useRouter()
@@ -15,7 +16,7 @@ export default function LoginPage() {
         </div>
       }
     >
-      <BackButton/>
+      <HomeButton/>
       {/* <button className="absolute top-15 left-15 bg-linear-to-br from-purple-600/30 via-purple-600/30 to to-purple-900/30   rounded-xl px-2 py-2 cursor-pointer"
       onClick={() => router.push('/')}>&larr; home</button> */}
       <LoginForm />

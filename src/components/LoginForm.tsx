@@ -5,8 +5,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { PiSpinnerGapBold } from "react-icons/pi";
 
 export function LoginForm(){
-  const [email, setEmail] = useState("coba123@gmail.com");
-  const [password, setPassword] = useState("coba123");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [message, setMessage] = useState<{text: string, type: 'success' | 'error' | ''}>({text: '', type:''})
   const [loading, setLoading] = useState(false);
   const router = useRouter();
