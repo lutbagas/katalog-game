@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     console.log(body)
     const email = String(body.email ?? '').trim().toLowerCase();
+    const username = String(body.username ?? '').trim().toLowerCase();
     const password = String(body.password ?? '');
   
     if (!email || !password || password.length < 6) {
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
     }
     const passwordHash = await bcrypt.hash(password, 10);
     const user = await prisma.user.create({
-      data: { email, passwordHash },
+      data: { email, passwordHash, username },
       select: { email: true, id: true}
     })
     return NextResponse.json({ success: 'Email berhasil dibuat'}, { status: 201 });

@@ -6,6 +6,7 @@ import { TbLoader2 } from "react-icons/tb";
 
 export function RegisterForm(){
   const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<{text: string; type: 'Success' | 'Error' | ''}>({ text: '', type: ''});
   const [loading, setLoading] = useState(false);
@@ -21,7 +22,7 @@ export function RegisterForm(){
     try {
       const res = await fetch ("api/auth/register", {
         method: "POST",
-        body: JSON.stringify({email, password}),
+        body: JSON.stringify({email, password, username}),
         headers: {"Content-Type": "application/json"}
       })
       if (res.ok){
@@ -47,6 +48,14 @@ export function RegisterForm(){
         required
         className="w-full p-3 focus:ring-2 ring-purple-400/70 focus:outline-none outline-1 outline-white/50"
       />
+      <input 
+        type="text"
+        value={username}
+        placeholder="Masukkan Username"
+        onChange={(e) => setUsername(e.target.value)}
+        required
+        className="w-full p-3 focus:ring-2 ring-purple-400/70 focus:outline-none outline-1 outline-white/50"
+        />
       <input 
         type="password"
         value={password}
