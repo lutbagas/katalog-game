@@ -60,6 +60,13 @@ Sesuaikan nilai environment dengan konfigurasi lokal Anda.
 ## Screenshot Tampilan katalog-game
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e519136d-0738-4938-91af-99873d3c984a" />
 
+## Penjelasan penting dari project ini
+- Maintenance secara jangka panjang
+- Memperbaiki Tampilan
+- Refactor Code
+- Memperbaiki Bug
+
+**Tidak ada penambahan fitur baru yang direncanakan**
 
 ## Lisensi
 
