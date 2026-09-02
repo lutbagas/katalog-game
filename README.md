@@ -1,5 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b048829e-606d-43eb-9910-1902763029f9" /># Katalog Game
-
 Katalog Game adalah aplikasi katalog game berbasis web yang dibangun dengan Next.js. Proyek ini menggunakan Prisma untuk akses database dan dirancang agar mudah dikembangkan.
 
 ## Fitur Utama
@@ -60,7 +58,8 @@ DATABASE_URL="postgresql://user:password@localhost:5432/katalog_game"
 Sesuaikan nilai environment dengan konfigurasi lokal Anda.
 
 ## Screenshot Tampilan katalog-game
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/82a7cf4f-3b41-4559-bd3a-9b7a52c9c3ce" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e519136d-0738-4938-91af-99873d3c984a" />
+
 
 ## Lisensi
 
